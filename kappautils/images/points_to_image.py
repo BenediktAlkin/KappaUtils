@@ -24,6 +24,7 @@ def xy_to_image(x, y, resolution, xmin=None, xmax=None, ymin=None, ymax=None, we
 
 def coords_to_image(coords, resolution, coords_min=None, coords_max=None, weights=None):
     if not torch.is_tensor(resolution):
+        assert resolution is not None
         resolution = torch.tensor(to_2tuple(resolution), device=coords.device)
     assert resolution.ndim == 1 and resolution.numel() == 2
     # rescale coords to resolution
