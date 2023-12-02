@@ -31,6 +31,12 @@ def is_ntuple(x, n):
 
 to_2tuple = _ntuple(2)
 is_2tuple = _is_ntuple(2)
+to_3tuple = _ntuple(3)
+is_3tuple = _is_ntuple(3)
+to_4tuple = _ntuple(4)
+is_4tuple = _is_ntuple(4)
+to_5tuple = _ntuple(5)
+is_5tuple = _is_ntuple(5)
 
 
 def float_to_integer_exact(f):
