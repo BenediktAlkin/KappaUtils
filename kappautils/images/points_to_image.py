@@ -1,5 +1,5 @@
 import torch
-
+from kappautils.param_checking import to_2tuple
 
 def xy_to_image(x, y, resolution, xmin=None, xmax=None, ymin=None, ymax=None, weights=None):
     coords = torch.stack([x, y], dim=1)
@@ -24,7 +24,7 @@ def xy_to_image(x, y, resolution, xmin=None, xmax=None, ymin=None, ymax=None, we
 
 def coords_to_image(coords, resolution, coords_min=None, coords_max=None, weights=None):
     if not torch.is_tensor(resolution):
-        resolution = torch.tensor(resolution, device=coords.device)
+        resolution = torch.tensor(to_2tuple(resolution), device=coords.device)
     assert resolution.ndim == 1 and resolution.numel() == 2
     # rescale coords to resolution
     if coords_min is not None:
