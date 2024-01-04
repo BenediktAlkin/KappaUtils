@@ -6,6 +6,8 @@ from pathlib import Path
 # adapted from timm (timm/models/layers/helpers.py)
 def _ntuple(n):
     def parse(x):
+        if x is None:
+            return None
         if isinstance(x, collections.abc.Iterable):
             assert len(x) == n
             return x
